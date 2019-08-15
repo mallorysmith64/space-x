@@ -15,23 +15,60 @@ ul {
   list-style: none;
 }
 
-nav {
+.top-background {
   background-color: #512da8;
   height: 4em;
 }
 
 .page-title {
   display: flex;
-  flex-direction: column;
+  position: relative;
+  top: 1em;
   color: white;
-  font-size: 1.5em;
-  padding-top: 0.4em;
-  padding-left: 0.2em;
+  font-size: 1.2em;
 }
 
-.about-link,
-.contact-link {
+.about-link {
   display: flex;
+  position: relative;
+  left: 3em;
   justify-content: center;
   color: white;
+}
+
+.contact-link {
+  display: flex;
+  position: relative;
+  left: 8em;
+  bottom: 1em;
+  justify-content: center;
+  color: white;
+}
+
+.explore-universe-text {
+  display: flex;
+  justify-content: center;
+  color: black; /*change this to white later*/
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  font-size: 0.6em;
+  font-weight: normal;
+  line-height: 0;
+}
+
+.launches-background {
+  display: flex;
+  position: relative;
+  background-color: #fdc104;
+  height: 2em;
+}
+
+.launches-title {
+  display: flex;
+
+  justify-content: center;
+  font-size: 1em;
 }
