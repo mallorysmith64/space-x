@@ -8,12 +8,22 @@ const makeUrl = spaceX => {
     headers: {
       'Content-Type': 'application/json; charset=utf-8'
     }
-  }).then(response => {
-    console.log()
-    return response.json()
   })
+    .then(response => {
+      // save for img fetch
+      return response.json()
+    })
+    .then(launchInfo => {
+      console.log(launchInfo)
+      const parent = document.querySelector('ul')
+      parent.textContent = ' '
+      launchInfo.forEach(launch => {
+        let launchDetails = document.createElement('li')
+        launchDetails.textContent = launch.details
+        parent.appendChild(launchDetails)
+      })
+    })
 }
-
 const main = () => {
   makeUrl()
 }
