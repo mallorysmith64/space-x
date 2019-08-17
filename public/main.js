@@ -21,6 +21,9 @@ const makeUrl = spaceX => {
         let launchDetails = document.createElement('li')
         launchDetails.textContent = launch.details
         parent.appendChild(launchDetails)
+        let launchDate = document.createElement('li')
+        launchDate.textContent = launch.launch_site
+        parent.appendChild(launchDate)
       })
     })
 }
