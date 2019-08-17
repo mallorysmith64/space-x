@@ -16,14 +16,13 @@ const makeUrl = spaceX => {
     .then(launchInfo => {
       console.log(launchInfo)
       const parent = document.querySelector('ul')
-      parent.textContent = ' '
-      launchInfo.forEach(launch => {
+      launchInfo.slice(0, 1).forEach(launch => {
         let launchDetails = document.createElement('li')
         launchDetails.textContent = launch.details
         parent.appendChild(launchDetails)
-        let launchDate = document.createElement('li')
-        launchDate.textContent = launch.launch_site
-        parent.appendChild(launchDate)
+        let launchLocation = document.createElement('li')
+        launchLocation.textContent = launch.launch_site.site_name_long
+        parent.appendChild(launchLocation)
       })
     })
 }
