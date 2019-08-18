@@ -17,62 +17,13 @@ const makeUrl = spaceX => {
     })
     .then(launchInfo => {
       console.log(launchInfo)
-      const parent = document.querySelector('ul')
+
       launches = launchInfo.map(launch => {
         return launch
       })
-      launches.slice(0, 1).forEach(launch => {
-        let launchDetails = document.createElement('li')
-        launchDetails.textContent =
-          launch.details || 'No description available.'
-        parent.appendChild(launchDetails)
-        document.querySelector('.mission-details').appendChild(launchDetails)
-        let launchLocation = document.createElement('li')
-        launchLocation.textContent = launch.launch_site.site_name_long
-        parent.appendChild(launchLocation)
-
-        //make countdown timer
-        const timer = setInterval(function() {
-          //set current date
-          let today = new Date()
-          //set end date or launch date
-          let timeLaunch = new Date(launch.launch_date_utc)
-          //find time between start and end dates
-          let findDate = timeLaunch.getTime() - today.getTime()
-          //change to total seconds
-          let timeDifference = findDate / 1e3
-          //covert to days, hours, minutes,seconds
-          let totalSeconds = Math.abs(timeDifference)
-          if (timeDifference < 0) {
-            clearInterval(timer)
-            document.querySelector('.countdown').textContent = 'Launched!'
-          } else {
-            const time = {
-              days: 0,
-              hours: 0,
-              minutes: 0,
-              seconds: 0
-            }
-            // convert time seconds to be displayed on card
-            time.days = Math.floor(totalSeconds / (60 * 60 * 24))
-            totalSeconds = totalSeconds - time.days * 24 * 60 * 60
-            time.hours = Math.floor(totalSeconds / (60 * 60))
-            totalSeconds = totalSeconds - time.hours * 60 * 60
-            time.minutes = Math.floor(totalSeconds / 60)
-            totalSeconds = totalSeconds - time.minutes * 60
-            time.seconds = Math.floor(totalSeconds)
-            document.querySelector('.countdown').textContent =
-              time.days +
-              ' days, ' +
-              time.hours +
-              ' hours, ' +
-              time.minutes +
-              ' minutes, ' +
-              time.seconds +
-              ' seconds'
-          }
-        }, 4000)
-      })
+      // Target current index in array.
+      let currentLaunch = launches[currentIndex]
+      GenerateMission(currentLaunch)
     })
 }
 
@@ -81,24 +32,78 @@ const previousBtn = () => {
   if (currentIndex > 0) {
     currentIndex--
   } else {
-    currentIndex = info.length - 1
+    currentIndex = launches.length - 1
   }
   // launchDetails()
 }
 
-// const nextBtn = () => {
-//   if (currentIndex > info.length - 2) {
-//     currentIndex = 0
-//   } else {
-//     currentIndex++
-//   }
-//
-// }
+const nextBtn = () => {
+  // if (currentIndex > info.length - 2) {
+  //   currentIndex = 0
+  // } else {
+  //   currentIndex++
+  // }
+  currentIndex++
+  //
+  let currentLaunch = launches[currentIndex]
+  GenerateMission(currentLaunch)
+}
 
 const main = () => {
   makeUrl()
 }
 
 document.querySelector('.left-arrow').addEventListener('click', previousBtn)
-// document.querySelector(".right-arrow").addEventListener("click", nextBtn)
+document.querySelector('.right-arrow').addEventListener('click', nextBtn)
 document.addEventListener('DOMContentLoaded', main)
+GenerateMission = launch => {
+  const parent = document.querySelector('ul')
+  let launchDetails = document.createElement('li')
+  launchDetails.textContent = launch.details || 'No description available.'
+  parent.appendChild(launchDetails)
+  document.querySelector('.mission-details').appendChild(launchDetails)
+  let launchLocation = document.createElement('li')
+  launchLocation.textContent = launch.launch_site.site_name_long
+  parent.appendChild(launchLocation)
+  //make countdown timer
+  const timer = setInterval(function() {
+    //set current date
+    let today = new Date()
+    //set end date or launch date
+    let timeLaunch = new Date(launch.launch_date_utc)
+    //find time between start and end dates
+    let findDate = timeLaunch.getTime() - today.getTime()
+    //change to total seconds
+    let timeDifference = findDate / 1e3
+    //covert to days, hours, minutes,seconds
+    let totalSeconds = Math.abs(timeDifference)
+    if (timeDifference < 0) {
+      clearInterval(timer)
+      document.querySelector('.countdown').textContent = 'Launched!'
+    } else {
+      const time = {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      }
+      // convert time seconds to be displayed on card
+      time.days = Math.floor(totalSeconds / (60 * 60 * 24))
+      totalSeconds = totalSeconds - time.days * 24 * 60 * 60
+      time.hours = Math.floor(totalSeconds / (60 * 60))
+      totalSeconds = totalSeconds - time.hours * 60 * 60
+      time.minutes = Math.floor(totalSeconds / 60)
+      totalSeconds = totalSeconds - time.minutes * 60
+      time.seconds = Math.floor(totalSeconds)
+      document.querySelector('.countdown').textContent =
+        time.days +
+        ' days, ' +
+        time.hours +
+        ' hours, ' +
+        time.minutes +
+        ' minutes, ' +
+        time.seconds +
+        ' seconds'
+    }
+  }, 4000)
+}
