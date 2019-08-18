@@ -21,8 +21,8 @@ const makeUrl = spaceX => {
         let launchDetails = document.createElement('li')
         launchDetails.textContent =
           launch.details || 'No description available.'
-        // document.querySelector('.mission-details').appendChild(launchDetails)
         parent.appendChild(launchDetails)
+        document.querySelector('.mission-details').appendChild(launchDetails)
         let launchLocation = document.createElement('li')
         launchLocation.textContent = launch.launch_site.site_name_long
         parent.appendChild(launchLocation)
@@ -66,7 +66,7 @@ const makeUrl = spaceX => {
               time.seconds +
               ' seconds'
           }
-        }, 6000)
+        }, 4000)
       })
     })
 }
