@@ -88,3 +88,13 @@ ul {
   font-size: 2rem;
   border-radius: 0rem 1rem 1rem 0rem;
 }
+
+.statement-background {
+  background-color: #d1c4e9;
+  padding: 3em;
+}
+
+.footer-background {
+  background-color: hsl(262, 52%, 47%);
+  padding: 2em;
+}
