@@ -1,5 +1,6 @@
 let time = []
 let currentIndex = 0
+let launches = []
 
 const makeUrl = spaceX => {
   const API_URL =
@@ -17,7 +18,10 @@ const makeUrl = spaceX => {
     .then(launchInfo => {
       console.log(launchInfo)
       const parent = document.querySelector('ul')
-      launchInfo.slice(0, 1).forEach(launch => {
+      launches = launchInfo.map(launch => {
+        return launch
+      })
+      launches.slice(0, 1).forEach(launch => {
         let launchDetails = document.createElement('li')
         launchDetails.textContent =
           launch.details || 'No description available.'
@@ -70,16 +74,31 @@ const makeUrl = spaceX => {
         }, 4000)
       })
     })
-  const previousBtn = () => {
-    let leftArrow = document.createElement('button')
-    parent.appendChild(leftArrow)
-    document.querySelector('.left-arrow').appendChild(leftArrow)
-  }
 }
+
+//previous launch info
+// const previousBtn = () => {
+//   if (currentIndex > 0) {
+//     currentIndex--
+//   } else {
+//     currentIndex = time.length - 1
+//   }
+//   //call something here
+// }
+
+// const nextBtn = () => {
+//   if (currentIndex > time.length - 2) {
+//     currentIndex = 0
+//   } else {
+//     currentIndex++
+//   }
+//   // call something here
+// }
 
 const main = () => {
   makeUrl()
 }
 
-// document.querySelector('.left-arrow').addEventListener('click', previousBtn)
+document.querySelector('.left-arrow').addEventListener('click', previousBtn)
+// document.querySelector(".right-arrow").addEventListener("click", nextBtn)
 document.addEventListener('DOMContentLoaded', main)
