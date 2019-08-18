@@ -28,33 +28,37 @@ const makeUrl = spaceX => {
 }
 
 //previous launch info
-const previousBtn = () => {
-  if (currentIndex > 0) {
-    currentIndex--
-  } else {
-    currentIndex = launches.length - 1
-  }
-}
+// const previousBtn = () => {
+//   if (currentIndex > 0) {
+//     currentIndex--
+//   } else {
+//     currentIndex = launches.length - 1
+//   }
+// }
 
 const nextBtn = () => {
   currentIndex++
   let currentLaunch = launches[currentIndex]
   GenerateMission(currentLaunch) //gets the next launch details
-  // let currentLocation = launches[currentIndex]
 }
-//why is this not const generate mission?
-GenerateMission = launch => {
-  const parent = document.querySelector('ul')
-  // if (currentIndex > 0) {
-  //   document.removeChild(launchDetails)
-  //   parent.removeChild(child) //clears entire launch card
-  let launchDetails = document.createElement('li')
-  launchDetails.textContent = launch.details || 'No description available.'
-  parent.appendChild(launchDetails)
-  document.querySelector('.mission-details').appendChild(launchDetails)
-  let launchLocation = document.createElement('li')
-  launchLocation.textContent = launch.launch_site.site_name_long
-  parent.appendChild(launchLocation)
+
+const GenerateMission = launch => {
+  if (currentIndex > 0) {
+    // launchDetails.textContent = ''
+    // launchLocation.textContent = ''
+  }
+  const parent = document.querySelector('.card-background')
+  // parent.textContent = ''
+  // let launchDetails = document.createElement('li')
+  document.querySelector('.mission-details').textContent =
+    launch.details || 'No description available.'
+  // parent.appendChild(launchDetails)
+  // document.querySelector('.mission-details').appendChild(launchDetails) //this gave me null error
+
+  // let launchLocation = document.createElement('li')
+  document.querySelector('.launch-location').textContent =
+    launch.launch_site.site_name_long
+  // parent.appendChild(launchLocation)
 
   //make countdown timer
   const timer = setInterval(function() {
@@ -97,13 +101,13 @@ GenerateMission = launch => {
         time.seconds +
         ' seconds'
     }
-  }, 2000)
+  }, 5000)
 }
 
 const main = () => {
   makeUrl()
 }
 
-document.querySelector('.left-arrow').addEventListener('click', previousBtn)
+// document.querySelector('.left-arrow').addEventListener('click', previousBtn)
 document.querySelector('.right-arrow').addEventListener('click', nextBtn)
 document.addEventListener('DOMContentLoaded', main)
