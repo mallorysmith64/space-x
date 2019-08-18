@@ -26,6 +26,7 @@ const makeUrl = spaceX => {
         let launchLocation = document.createElement('li')
         launchLocation.textContent = launch.launch_site.site_name_long
         parent.appendChild(launchLocation)
+
         //make countdown timer
         const timer = setInterval(function() {
           //set current date
@@ -69,10 +70,16 @@ const makeUrl = spaceX => {
         }, 4000)
       })
     })
+  const previousBtn = () => {
+    let leftArrow = document.createElement('button')
+    parent.appendChild(leftArrow)
+    document.querySelector('.left-arrow').appendChild(leftArrow)
+  }
 }
 
 const main = () => {
   makeUrl()
 }
 
+// document.querySelector('.left-arrow').addEventListener('click', previousBtn)
 document.addEventListener('DOMContentLoaded', main)
