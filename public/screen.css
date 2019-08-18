@@ -72,6 +72,14 @@ ul {
   height: 2em;
 }
 
+.card-background {
+  background-color: rgb(237, 237, 237);
+  margin-left: 4em;
+  margin-right: 4em;
+  border-radius: 2em;
+  padding: 3em;
+}
+
 .launches-title {
   display: flex;
   justify-content: center;
@@ -92,11 +100,15 @@ ul {
 .statement-background {
   background-color: #d1c4e9;
   padding: 3em;
-  width: 100%;
 }
 
-.footer-background {
+.footer {
   background-color: hsl(262, 52%, 47%);
+  text-align: center;
   padding: 2em;
-  width: 100%;
+  color: silver;
+}
+
+.footer-link {
+  color: silver;
 }
