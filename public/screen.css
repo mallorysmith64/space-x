@@ -78,16 +78,13 @@ ul {
   font-size: 1em;
 }
 
-.left-arrow {
-  border-radius: 0rem 1rem 1rem 0rem;
-}
-
 .arrow {
-  width: 5rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 8rem 0rem 8rem 0rem;
-  background-color: (221, 221, 221);
+  width: 0.2em;
+  height: 7em;
+  padding: 0.5em 1em 1em 0.5em;
+  background-color: rgb(255, 193, 7);
   font-size: 2rem;
+  border-radius: 0rem 1rem 1rem 0rem;
 }
