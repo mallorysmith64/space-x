@@ -92,9 +92,11 @@ ul {
 .statement-background {
   background-color: #d1c4e9;
   padding: 3em;
+  width: 100%;
 }
 
 .footer-background {
   background-color: hsl(262, 52%, 47%);
   padding: 2em;
+  width: 100%;
 }

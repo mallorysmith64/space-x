@@ -1,4 +1,4 @@
-let time = []
+let info = []
 let currentIndex = 0
 let launches = []
 
@@ -77,22 +77,22 @@ const makeUrl = spaceX => {
 }
 
 //previous launch info
-// const previousBtn = () => {
-//   if (currentIndex > 0) {
-//     currentIndex--
-//   } else {
-//     currentIndex = time.length - 1
-//   }
-//   //call something here
-// }
+const previousBtn = () => {
+  if (currentIndex > 0) {
+    currentIndex--
+  } else {
+    currentIndex = info.length - 1
+  }
+  // launchDetails()
+}
 
 // const nextBtn = () => {
-//   if (currentIndex > time.length - 2) {
+//   if (currentIndex > info.length - 2) {
 //     currentIndex = 0
 //   } else {
 //     currentIndex++
 //   }
-//   // call something here
+//
 // }
 
 const main = () => {
