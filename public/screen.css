@@ -16,8 +16,19 @@ ul {
 }
 
 .top-background {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  justify-content: flex-start;
   background-color: #512da8;
   height: 4em;
+}
+
+.top-positioning {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .page-title {
@@ -28,21 +39,10 @@ ul {
   font-size: 1.2em;
 }
 
-.about-link {
+.position-links {
   display: flex;
-  position: relative;
-  left: 3em;
-  justify-content: center;
-  color: white;
-}
-
-.contact-link {
-  display: flex;
-  position: relative;
-  left: 8em;
-  bottom: 1em;
-  justify-content: center;
-  color: white;
+  flex-direction: row;
+  font-size: 0.8em;
 }
 
 .explore-universe-text {
@@ -61,7 +61,6 @@ ul {
   justify-content: center;
   font-size: 0.6em;
   font-weight: normal;
-
   line-height: 0;
 }
 
@@ -102,10 +101,13 @@ main {
   justify-content: space-evenly;
 }
 
-/* .mission-name {
-display:flex;
-
-} */
+.mission-style {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
 
 .row-icons {
   display: flex;
