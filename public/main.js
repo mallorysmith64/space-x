@@ -1,8 +1,9 @@
 let info = []
 let currentIndex = 0
 let launches = []
+// let photos = []
 
-const makeUrl = spaceX => {
+const spaceUrl = spaceX => {
   const API_URL =
     'https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming'
 
@@ -12,7 +13,6 @@ const makeUrl = spaceX => {
     }
   })
     .then(response => {
-      // save for img fetch
       return response.json()
     })
     .then(launchInfo => {
@@ -21,9 +21,26 @@ const makeUrl = spaceX => {
       launches = launchInfo.map(launch => {
         return launch
       })
-      // Target current index in array.
+      // target current index in array.
       let currentLaunch = launches[currentIndex]
       GenerateMission(currentLaunch)
+    })
+}
+
+const photoUrl = nasa => {
+  const PHOTO_URL = 'https://sdg-astro-api.herokuapp.com/api/Nasa/apod'
+  fetch(PHOTO_URL, {
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8'
+    }
+  })
+    .then(response => {
+      return response.json()
+    })
+    .then(photoResponse => {
+      console.log(photoResponse.hdUrl)
+
+      document.querySelector('.explore-image').src = photoResponse.hdUrl
     })
 }
 
@@ -99,7 +116,8 @@ const nextBtn = () => {
 }
 
 const main = () => {
-  makeUrl()
+  spaceUrl()
+  photoUrl()
 }
 
 //todo

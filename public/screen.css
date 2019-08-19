@@ -45,6 +45,11 @@ ul {
   font-size: 0.8em;
 }
 
+img {
+  width: 22.5em;
+  height: 22.5em;
+}
+
 .explore-universe-text {
   display: flex;
   justify-content: center;
@@ -52,8 +57,8 @@ ul {
   background-position: 50% 50%;
   margin: 0;
   height: 6em;
-  background-image: url('https://apod.nasa.gov/apod/image/1908/orion1901_ritchey1024.jpg');
   color: white;
+  /* z-index: 1; */
 }
 
 .copyright {
