@@ -34,9 +34,9 @@ ul {
 .page-title {
   display: flex;
   position: relative;
-  top: 1em;
+  right: 1em;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 .position-links {
@@ -47,6 +47,13 @@ ul {
 
 img {
   width: 20em;
+}
+
+.explore-image {
+  background-position: 0% 50%;
+  background-size: 22.5em;
+  background-repeat: no-repeat;
+  height: 15em;
 }
 
 .explore-universe-text {
