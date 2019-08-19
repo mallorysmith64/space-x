@@ -38,12 +38,13 @@ const photoUrl = nasa => {
       return response.json()
     })
     .then(photoResponse => {
-      console.log(photoResponse.hdUrl)
+      console.log(photoResponse)
 
       // document.querySelector('.explore-image').src = photoResponse.hdUrl
       document.querySelector('.explore-image').style.backgroundImage = `url(${
         photoResponse.hdUrl
       })`
+      document.querySelector('.copyright').textContent = photoResponse.copyright
     })
 }
 

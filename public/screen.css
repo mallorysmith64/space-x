@@ -84,10 +84,10 @@ img {
 
 .card-background {
   background-color: rgb(237, 237, 237);
-  margin-left: 4em;
-  margin-right: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
   border-radius: 2em;
-  padding: 3em;
+  padding: 1em;
 }
 
 .launches-title {
