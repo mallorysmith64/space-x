@@ -27,30 +27,16 @@ const makeUrl = spaceX => {
     })
 }
 
-//previous launch info
-// const previousBtn = () => {
-//   if (currentIndex > 0) {
-//     currentIndex--
-//   } else {
-//     currentIndex = launches.length - 1
-//   }
-// }
-
-const nextBtn = () => {
-  currentIndex++
-  let currentLaunch = launches[currentIndex]
-  GenerateMission(currentLaunch) //gets the next launch details
-}
-
 const GenerateMission = launch => {
   if (currentIndex > 0) {
   }
   const parent = document.querySelector('.card-background')
-  document.querySelector('.mission-details').textContent =
-    launch.details || 'No description available.'
-  // document.querySelector('.mission-details').appendChild(launchDetails) //this gave me null error
+  document.querySelector('.mission-name').textContent = launch.mission_name //mission name
 
-  document.querySelector('.launch-location').textContent =
+  document.querySelector('.mission-details').textContent = //mission description
+    launch.details || 'No description available.'
+
+  document.querySelector('.launch-location').textContent = //mission location
     launch.launch_site.site_name_long
 
   //make countdown timer
@@ -97,10 +83,26 @@ const GenerateMission = launch => {
   }, 5000)
 }
 
+//previous launch info
+// const previousBtn = () => {
+//   if (currentIndex > 0) {
+//     currentIndex--
+//   } else {
+//     currentIndex = launches.length - 1
+//   }
+// }
+
+const nextBtn = () => {
+  currentIndex++
+  let currentLaunch = launches[currentIndex]
+  GenerateMission(currentLaunch) //gets the next launch details
+}
+
 const main = () => {
   makeUrl()
 }
 
+//todo
 // document.querySelector('.left-arrow').addEventListener('click', previousBtn)
 document.querySelector('.right-arrow').addEventListener('click', nextBtn)
 document.addEventListener('DOMContentLoaded', main)
