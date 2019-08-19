@@ -142,9 +142,26 @@ main {
 }
 
 @media (min-width: 800px) {
+  .top-background {
+    height: 6.2em;
+  }
+  .page-title {
+    padding: 0.5em;
+    font-size: 3em;
+  }
+  .position-links {
+    position: relative;
+    left: 95em;
+    font-size: 0.7em;
+  }
   .explore-image {
     background-size: 100%;
     background-position: 30% 50%;
     height: 40em;
+  }
+  .explore-universe-text {
+    position: relative;
+    font-size: 4em;
+    top: 2.5em;
   }
 }
