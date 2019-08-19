@@ -83,14 +83,14 @@ const GenerateMission = launch => {
   }, 5000)
 }
 
-//previous launch info
-// const previousBtn = () => {
-//   if (currentIndex > 0) {
-//     currentIndex--
-//   } else {
-//     currentIndex = launches.length - 1
-//   }
-// }
+// previous launch info
+const previousBtn = () => {
+  if (currentIndex > 0) {
+    currentIndex--
+    let currentLaunch = launches[currentIndex]
+    GenerateMission(currentLaunch) //gets the next launch details
+  }
+}
 
 const nextBtn = () => {
   currentIndex++
@@ -103,6 +103,6 @@ const main = () => {
 }
 
 //todo
-// document.querySelector('.left-arrow').addEventListener('click', previousBtn)
+document.querySelector('.left-arrow').addEventListener('click', previousBtn)
 document.querySelector('.right-arrow').addEventListener('click', nextBtn)
 document.addEventListener('DOMContentLoaded', main)
