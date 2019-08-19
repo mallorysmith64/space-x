@@ -86,7 +86,7 @@ ul {
   font-size: 1em;
 }
 
-.arrow {
+.arrows {
   display: flex;
   justify-content: center;
   width: 0.2em;
@@ -95,6 +95,11 @@ ul {
   background-color: rgb(255, 193, 7);
   font-size: 2rem;
   border-radius: 0rem 1rem 1rem 0rem;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .statement-background {

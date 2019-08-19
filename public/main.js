@@ -44,21 +44,14 @@ const nextBtn = () => {
 
 const GenerateMission = launch => {
   if (currentIndex > 0) {
-    // launchDetails.textContent = ''
-    // launchLocation.textContent = ''
   }
   const parent = document.querySelector('.card-background')
-  // parent.textContent = ''
-  // let launchDetails = document.createElement('li')
   document.querySelector('.mission-details').textContent =
     launch.details || 'No description available.'
-  // parent.appendChild(launchDetails)
   // document.querySelector('.mission-details').appendChild(launchDetails) //this gave me null error
 
-  // let launchLocation = document.createElement('li')
   document.querySelector('.launch-location').textContent =
     launch.launch_site.site_name_long
-  // parent.appendChild(launchLocation)
 
   //make countdown timer
   const timer = setInterval(function() {
