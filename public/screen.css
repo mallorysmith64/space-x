@@ -140,3 +140,11 @@ main {
 .footer-link {
   color: silver;
 }
+
+@media (min-width: 800px) {
+  .explore-image {
+    background-size: 100%;
+    background-position: 30% 50%;
+    height: 40em;
+  }
+}
