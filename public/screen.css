@@ -102,6 +102,16 @@ main {
   justify-content: space-evenly;
 }
 
+/* .mission-name {
+display:flex;
+
+} */
+
+.row-icons {
+  display: flex;
+  flex-direction: row;
+}
+
 .statement-background {
   background-color: #d1c4e9;
   padding: 3em;
