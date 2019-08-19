@@ -40,7 +40,10 @@ const photoUrl = nasa => {
     .then(photoResponse => {
       console.log(photoResponse.hdUrl)
 
-      document.querySelector('.explore-image').src = photoResponse.hdUrl
+      // document.querySelector('.explore-image').src = photoResponse.hdUrl
+      document.querySelector('.explore-image').style.backgroundImage = `url(${
+        photoResponse.hdUrl
+      })`
     })
 }
 
