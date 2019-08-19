@@ -101,7 +101,7 @@ const GenerateMission = launch => {
         time.seconds +
         ' seconds'
     }
-  }, 5000)
+  }, 1000)
 }
 
 // previous launch info
