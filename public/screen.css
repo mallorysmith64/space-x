@@ -37,11 +37,12 @@ ul {
   right: 1em;
   color: white;
   font-size: 1.3em;
+  padding: 0.2em;
 }
 
 .position-links {
   display: flex;
-  flex-direction: row;
+  justify-content: flex-end;
   font-size: 0.8em;
 }
 
@@ -141,6 +142,7 @@ main {
   color: silver;
 }
 
+/*desktop version*/
 @media (min-width: 800px) {
   .top-background {
     height: 6.2em;

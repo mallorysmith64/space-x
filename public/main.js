@@ -124,7 +124,6 @@ const main = () => {
   photoUrl()
 }
 
-//todo
 document.querySelector('.left-arrow').addEventListener('click', previousBtn)
 document.querySelector('.right-arrow').addEventListener('click', nextBtn)
 document.addEventListener('DOMContentLoaded', main)
