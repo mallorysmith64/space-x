@@ -1,6 +1,6 @@
 # Space X
 
-This project is also called SDG Astro Club
+This project is also called SDG Astro Club.
 
 Prove yourself, warrior!
 You have grown very quickly to have worked with and master HTML, CSS, JavaScript, and basic programming fundamentals. This will be a test of those skills and ideas that you have gained and a reflection of how far you have come.
