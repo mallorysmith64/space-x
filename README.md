@@ -5,8 +5,6 @@ This project is also called SDG Astro Club.
 Prove yourself, warrior!
 You have grown very quickly to have worked with and master HTML, CSS, JavaScript, and basic programming fundamentals. This will be a test of those skills and ideas that you have gained and a reflection of how far you have come.
 
-For this assignment you will be doing 3 code katas, as well as reproducing a website.
-
 Objectives
 - Show off your problem-solving skills
 - Show off HTML, CSS, and JavaScript Skills
