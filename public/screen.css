@@ -46,7 +46,7 @@ a {
 
 .position-links {
   display: flex;
-  justify-content: flex-end;
+  padding: 0.4em 0em 0em 7em;
   font-size: 0.8em;
 }
 
